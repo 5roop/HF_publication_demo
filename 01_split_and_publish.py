@@ -55,10 +55,21 @@ for file in files_to_process:
     df["audio"] = df["id"].apply(lambda s: str(SEGMENT_DIR/ f"{s}.wav"))
     assert df.audio.apply(lambda s: Path(s).exists()).all(), "Some segment files do not exist!"
     dfs.append(df[["id", "audio", "transcript"]])
-    
 df = pd.concat(dfs).reset_index(drop=True)
+
+
+
+# This is the fun part. df is a DataFrame with columns id, audio, and transcript.
+# We will convert it to a dataset:
 ds = datasets.Dataset.from_pandas(df)
+
+# Before the column audio was just a string, telling us where the data can be found. 
+# We will cast the column to audio, meaning that the file will be read and entries will be
+# a huggingface representation of the audio. At the same time, we will specify
+# sampling rate and number of channels:
 ds = ds.cast_column("audio", datasets.Audio(sampling_rate=16_000, mono=True))
 
+
+# Now we publish the dataset to HuggingFace dataset hub under TARGET_DATASET_NAME:
 logging.info("Pushing to HuggingFace:")
 ds.push_to_hub(repo_id=TARGET_DATASET_NAME)
