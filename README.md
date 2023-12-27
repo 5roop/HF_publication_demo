@@ -4,6 +4,8 @@ A brief proof-of-concept repo for publishing an audio dataset on HF hub.
 This repo will use the results of [this SRT-to-CSV converter](https://github.com/niknah/SRT-to-CSV-and-audio-split/tree/master) that produces a directory called "ready_for_slice" with csv files. (For some reason, I do not get the promissed segmented audio output.)
 
 ## Data structure:
+
+```
 .
 ├── audio -> input, full length audio files
 ├── audio_segments -> this is where segments will be put.
@@ -11,7 +13,7 @@ This repo will use the results of [this SRT-to-CSV converter](https://github.com
 │   ├── Example.csv
 │   └── free.csv
 |   This is copied from the SRT-to-CSV converter
-
+```
 
 ## Set up a new python environment
 
