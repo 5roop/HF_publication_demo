@@ -1,4 +1,8 @@
 .vscode
+.lprof
+*.mp3
+*.wav
+*.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
