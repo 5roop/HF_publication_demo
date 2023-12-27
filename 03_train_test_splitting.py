@@ -47,3 +47,9 @@ test = datasets.Dataset.from_pandas(test).cast_column(
 # Now let's join them together and push to huggingface:
 ds = datasets.DatasetDict({"train": train, "dev": dev, "test": test})
 ds.push_to_hub(HF_DATASET_NAME)
+
+# Just for fun, let's save the dataset to disk:
+ds.save_to_disk("my_dataset")
+
+# and now we can load it with:
+datasets.DatasetDict.load_from_disk("my_dataset")
