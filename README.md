@@ -99,3 +99,8 @@ If you don't need the individual wav files, you can delete the whole audio_segme
 ```bash
 rm -r audio_segments
 ```
+
+
+
+# Unrelated additions:
+I also added two scripts, the 02_importing_mp3_directly.py tests the concept of importing mp3 directly, while the other one, 03_train_test_splitting.py demonstrates how to split the dataset and publish it with proper names.
