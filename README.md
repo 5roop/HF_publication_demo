@@ -6,14 +6,17 @@ This repo will use the results of [this SRT-to-CSV converter](https://github.com
 ## Data structure:
 
 ```
-.
-├── audio -> input, full length audio files
-├── audio_segments -> this is where segments will be put.
+├── audio 
+│   └── free.mp3
+├── audio_segments
 ├── ready_for_slice
-│   ├── Example.csv
 │   └── free.csv
-|   This is copied from the SRT-to-CSV converter
+├── 01_split_and_publish.py
+├── README.md
+└── requirements.txt
 ```
+Put full length audio in `audio`. Put CSVs in `ready_for_slice`, with the same name. The `01_split_and_publish.py` script will populate `audio_segments`. Afterwards it can be deleted if not needed.
+
 
 ## Set up a new python environment
 
