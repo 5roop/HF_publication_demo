@@ -91,6 +91,7 @@ Run
 python 01_split_and_publish.py
 ```
 
+This should then publish the dataset to huggingface, wherever you specified in TARGET_DATASET_NAME. You can see it at https://huggingface.co/datasets/TARGET_DATASET_NAME, play the audio and see if everything looks OK.
 ## Cleaning up
 
 If you don't need the individual wav files, you can delete the whole audio_segments directory:
